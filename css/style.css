@@ -1,9 +1,8 @@
 /* 
 Itens que precisam ser feitos:
+
 -Não estou conseguindo deixar o menu com um tamanho de padding adequado e bonito, ele acaba saindo do header
-
 - Não estou conseguindo colocar o toogle menu
-
 - Não estou conseguindo ajudar a lateral, os AD ficam para fora. 
 - Como fazer o toogle menu
 
@@ -20,21 +19,23 @@ Itens que precisam ser feitos:
     width: 100%;
     height: 40px;
     font-size: 20px;
-    background-color: #000000;
-    color: #FFFFFF;
+    background-color: #000000;    
 }
-.header .menu {
-    float: left;
-    margin: 10px;
+.header a {
+    text-decoration: none;
+    color: white;
+}
+.header a:hover {  
+    background-color: white;
+    color: black;
 }
 
-.header .logo {
-    text-align: center;
+.header .logo {    
     float: left;
     display: inline-block;
     list-style-type: none;
-    background-color: #b5b5b5;
-       
+    line-height: 40px;
+    padding: 0 10px;
 }
 
 .header .logo:hover{
@@ -47,7 +48,8 @@ Itens que precisam ser feitos:
     float: left;
     display: inline-block;
     list-style-type: none;
-    margin-right: 25px;
+    line-height: 40px;
+    padding: 0 10px;
 }
 
 .header .itens-menu:hover{
@@ -59,27 +61,42 @@ Itens que precisam ser feitos:
     position: fixed;
     top: 0;
     right: 0;
+    line-height: 40px;
+    padding: 0 10px;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
-@media only screen and (min-width: 840px){
+#menu-toggle:hover{
+    background-color: #FFFFFF;
+    color:#000000;
+}
+
+.header::after{
+    clear: both;
+    content: '';
+    display: block;
+}
 /* ----- Main -----*/
 .main {
-    display: flex;
     margin-top: 15px;
 }
-.main:after{
+.main::after{
     clear:both;
+    content: '';
+    display: block;
 }
 
 .section::after {
     content: '';
     clear: both;
+    display: block;
 }
 
 /* ----- Content Text -----*/
 .main .text-left{
     float:left;
-    width:60%;
+    width:70%;
     margin-left: 10px;
 }
 
@@ -97,11 +114,10 @@ Itens que precisam ser feitos:
 /* ----- Content ad -----*/
 .main .ad-right{
     float:right;
-    width:30%;
+    width:25%;
     margin: 10px;
 }
-.main .ad-right .ad300x70 {
-    width: 300px;
+.main .ad-right .adSmall {
     height: 70px;
     text-align: center;
     border: 1px #BFBFBF;
@@ -109,8 +125,7 @@ Itens que precisam ser feitos:
     margin-bottom: 10px;
     line-height: 70px;
 }
-.main .ad-right .ad300x200 {
-    width: 300px;
+.main .ad-right .adMid {
     height: 200px;
     text-align: center;
     border: 1px #BFBFBF;
@@ -118,5 +133,90 @@ Itens que precisam ser feitos:
     margin-bottom: 10px;
     line-height: 200px;
 }
+/* ---- nav pages ---- */
+
+
+.page-button{
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.page-button  .itens-page{
+    text-align: center;
+    display: inline-block;
+    list-style-type: none;s
+    line-height: 40px;
+    padding: 5px 10px;
+}
+
+.page-button .itens-page:hover{
+    -ms-transform:scale(1.5,1.5);
+    -webkit-transform:scale(1.5,1.5);
+    -moz-transform:scale(1.5,1.5);
+    -o-transform:scale(1.5,1.5);
+    transform: scale(1.5,1.5);
+    /*usar javascript para apagar atribuir o selected para o hover */ 
+
+}
+.last-item{
+    background: url(../img/last.png) no-repeat center center;
+    background-size: 20px;
+    max-width:31px;
+    max-height:40px
+}
+.selected{
+    color: #FFFFFF;
+    background-color: #000000;
+}
+/* ----- Footer -----*/
+.footer{
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    height: 100px;
+}
+
+
+.footer p{
+    line-height: 100px;
+    align-content: center;
+    color: #FFFFFF;
+    margin-left: 10px;
+}
+
+
+/* Responsivo */
+@media only screen and (min-width:320px) and (max-width: 600px){
+    body{
+        background-color: rgba(40, 10, 10, 0.06);
+        /*apenas para perceber a mudança */
+    }
+    .menu{
+        display:none;
+    }
+    .main .text-left{
+        float:left;
+        width:80%;
+        margin: 25px;
+        display: inline-block;
+    }
+
+    .main .ad-right{
+        float:left;
+        width:80%;
+        margin: 25px;
+        display: inline-block;
+    }
+
+
+}
+
+@media only screen and (min-width:0px) and (max-width: 320px){
+    body{
+        content: "";
+    }
+    /* colocar todos os elementos ocultos*/
 
 }
