@@ -1,8 +1,20 @@
+/* 
+Itens que precisam ser feitos:
+-Não estou conseguindo deixar o menu com um tamanho de padding adequado e bonito, ele acaba saindo do header
+
+- Não estou conseguindo colocar o toogle menu
+
+- Não estou conseguindo ajudar a lateral, os AD ficam para fora. 
+- Como fazer o toogle menu
+
+*/
+
 * {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 /* ----- Header -----*/
 .header {
     width: 100%;
@@ -21,13 +33,13 @@
     float: left;
     display: inline-block;
     list-style-type: none;
-    margin-right: 25px;
+    background-color: #b5b5b5;
+       
 }
 
 .header .logo:hover{
     background-color: white;
     color: black;
-
 }
 
 .header .itens-menu{
@@ -43,6 +55,13 @@
     color: black;
 }
 
+#menu-toggle {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+@media only screen and (min-width: 840px){
 /* ----- Main -----*/
 .main {
     display: flex;
@@ -98,4 +117,6 @@
     border-style: solid;
     margin-bottom: 10px;
     line-height: 200px;
+}
+
 }
