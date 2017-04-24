@@ -186,7 +186,72 @@ Itens que precisam ser feitos:
     margin-left: 10px;
 }
 
-
+/*----- Side menu -------*/
+.wrapper .dark-background{
+  display: none;
+}
+.wrapper.show-menu .dark-background{
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+.side-menu {
+  position: fixed;
+  height: 100%;
+  width: 300px;
+  top: 40px;
+  left: 0;
+  padding: 30px;
+  box-sizing: border-box;
+  transform: translateX(-300px);
+  transition: .3s ease all;
+  background: #f3f3f3;
+}
+.side-menu .bm-title{
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.side-menu .burger-menu .bm-item{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.side-menu .burger-menu .bm-item > a{
+  color: #444;
+  text-decoration: none;
+}
+.wrapper.show-menu .side-menu {
+    transform: translateX(0);
+    transition: .3s ease all;
+}
+.close {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.5;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: black;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
 /* Responsivo */
 @media only screen and (min-width:320px) and (max-width: 600px){
     body{
